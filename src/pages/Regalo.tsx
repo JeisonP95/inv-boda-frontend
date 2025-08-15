@@ -2,16 +2,12 @@ import type React from "react"
 import { useNavigate } from "react-router-dom"
 import { FaGift, FaMoneyBillWave, FaArrowLeft } from "react-icons/fa"
 import { useState } from "react"
-import nequiQR from "../assets/qr_nequi.jpg"
-import { motion } from "framer-motion";
-import { CreditCard } from "lucide-react";
+import { motion } from "framer-motion"
+import { CreditCard } from "lucide-react"
 
 const GiftRegistry: React.FC = () => {
   const [showPhysicalGiftMessage, setShowPhysicalGiftMessage] = useState(false)
   const [showHoneymoonForm, setShowHoneymoonForm] = useState(false)
-  const [amount, setAmount] = useState("")
-  const [paymentMethod, setPaymentMethod] = useState("mercadopago")
-  const [showNequiInfo, setShowNequiInfo] = useState(false)
   const navigate = useNavigate()
 
   const handlePhysicalGiftClick = (e: React.MouseEvent) => {
@@ -24,44 +20,6 @@ const GiftRegistry: React.FC = () => {
     e.preventDefault()
     setShowHoneymoonForm(true)
     setShowPhysicalGiftMessage(false)
-  }
-
-  const handleCancel = () => {
-    setShowHoneymoonForm(false)
-    setAmount("")
-    setPaymentMethod("mercadopago")
-    setShowNequiInfo(false)
-  }
-
-  const handleHoneymoonSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    try {
-
-
-      // Aquí iría tu llamada a la API para guardar en la base de datos
-      // await saveToDatabase(giftData)
-
-      // Redirigir según el método de pago seleccionado
-      if (paymentMethod === "mercadopago") {
-        const bankKeyUrl = "http://link.mercadopago.com.co/electrosjp"
-        window.open(bankKeyUrl, "_blank")
-        setShowHoneymoonForm(false)
-      } else if (paymentMethod === "nequi") {
-        setShowNequiInfo(true)
-      }
-
-      // Limpiar el formulario
-      setAmount("")
-    } catch (error) {
-      console.error("Error al procesar el aporte:", error)
-    }
-  }
-
-  const handleCloseNequiInfo = () => {
-    setShowNequiInfo(false)
-    setShowHoneymoonForm(false)
-    setPaymentMethod("mercadopago")
   }
 
   return (
@@ -87,6 +45,7 @@ const GiftRegistry: React.FC = () => {
           <span>Aporte digital</span>
         </a>
       </div>
+
       {showPhysicalGiftMessage && (
         <div className="gift-message">
           <p>
@@ -95,6 +54,7 @@ const GiftRegistry: React.FC = () => {
           </p>
         </div>
       )}
+
       {showHoneymoonForm && (
         <div className="gift-message">
           <p className="honeymoon-message">
@@ -120,23 +80,6 @@ const GiftRegistry: React.FC = () => {
               <p className="mono">A nombre de: Valentina Florez</p>
             </div>
           </motion.div>
-        </div>
-      )}
-      {showNequiInfo && (
-        <div className="nequi-info">
-          <div className="nequi-content">
-            <h3>Información de Pago Nequi</h3>
-            <p className="nequi-number">Número: 3001234567</p>
-            <div className="qr-container">
-              <img src={nequiQR} alt="Código QR Nequi" className="nequi-qr" />
-            </div>
-            <p className="nequi-instructions">
-              Escanea el código QR o usa el número para realizar tu aporte
-            </p>
-            <button className="close-btn" onClick={handleCloseNequiInfo}>
-              Cerrar
-            </button>
-          </div>
         </div>
       )}
     </div>
