@@ -2,12 +2,11 @@ import type React from "react"
 import { useNavigate } from "react-router-dom"
 import fotoUbi from "../assets/portada_dic.jpg"
 import CustomIconButton from "../components/CustomIconButton"
-import { FaMapMarkerAlt, FaArrowLeft } from "react-icons/fa";
+import { FaMapMarkerAlt, FaArrowLeft, FaWhatsapp, FaPhone, FaMobileAlt } from "react-icons/fa";
 
 interface LocationProps {
   name: string
   address: string
-  
   googleMapsLink: string
 }
 
@@ -39,8 +38,12 @@ const Location: React.FC<LocationProps> = ({ name, address ,googleMapsLink }) =>
       <div>
         <h3 className="location-name">Informacion</h3>
         <ul>
-          <li><p>🚖 Contacto de taxi: 3238787183</p></li>
+          <li><p> Taxi:</p></li>
+          <li><p><FaWhatsapp /> WhatsApp: 3128311317</p></li>
+          <li><p><FaPhone /> Teléfono fijo: (602)8473363</p></li>
+          <li><p><FaMobileAlt /> Teléfono móvil: 3238787183</p></li>
           <li></li>
+          <p>Parqueadero disponible en el lugar</p>
         </ul>
       </div>
     </div>

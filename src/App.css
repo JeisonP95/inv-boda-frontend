@@ -7,6 +7,7 @@
   font-family: "Playfair Display", serif;
 }
 
+
 body {
   overflow-x: hidden;
 }
@@ -625,6 +626,22 @@ body {
   box-sizing: border-box;
 }
 
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 300px;
+  margin:auto;
+  border: 2px solid #a68a72;
+  border-radius: 10px;
+  padding: 10px;
+}
 /* Responsive para pantallas grandes */
 @media (min-width: 768px) {
   .location-section {
@@ -748,6 +765,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .dress-code .back-button {
@@ -852,8 +870,7 @@ body {
 .dress-code .message {
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 1.5rem;
-  margin: 0.5rem 0;
+  padding: 10px;
   border: 1px solid #a68a72;
   max-width: 400px;
   width: 100%;
@@ -861,7 +878,6 @@ body {
 
 .dress-code .message:first-of-type {
   font-size: 1.5rem;
-  font-weight: bold;
   color: #a68a72;
   margin-bottom: 1rem;
 }
@@ -869,13 +885,15 @@ body {
 .dress-code .message:last-of-type {
   font-size: 1.1rem;
   color: #a68a72;
-  line-height: 1.6;
 }
 
 /* Responsive design para vestimenta */
 @media (max-width: 768px) {
   .dress-code {
     padding: 1rem;
+    width: 100%;
+    max-width: 450px;
+    
   }
 
   .dress-code h2 {
@@ -907,7 +925,6 @@ body {
 
   .dress-code .message {
     padding: 1rem;
-    margin: 0.25rem 0;
   }
 }
 

@@ -6,7 +6,7 @@ const LocationPage: React.FC = () => {
   return (
     <Location
       name="Casa del rio"
-      address="Av. Jardines 123, Col. Flores, Santander de Quilichao"
+      address="Cll 2a con Cra 2, Barrio Belen, Santander de Quilichao"
       googleMapsLink="https://maps.app.goo.gl/qnfgV4Gs6BjLJRWS6"
     />
   )
