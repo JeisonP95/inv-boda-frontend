@@ -5,8 +5,10 @@ interface RSVPData {
   guests?: number;
 }
 
+const API_URL = "https://inv-boda-backend.onrender.com/api/rsvp";
+
 export const enviarRSVP = async (data: RSVPData) => {
-  const res = await fetch("http://localhost:5000/api/rsvp", {
+  const res = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -16,6 +18,6 @@ export const enviarRSVP = async (data: RSVPData) => {
 };
 
 export const obtenerRSVPs = async () => {
-  const res = await fetch("http://localhost:5000/api/rsvp");
+  const res = await fetch(API_URL);
   return res.json();
 };
