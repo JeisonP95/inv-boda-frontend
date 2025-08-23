@@ -2,16 +2,18 @@ import type React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { enviarRSVP } from "../services/rsvp";
 
 interface RSVPProps {
-  onSubmit?: (name: string, attending: string) => void;
+  onSubmit?: (name: string, attending: string, guests?: number) => void;
   ticket?: string | null;
 }
 
-const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket, onSubmit }) => {
+const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
   const [name, setName] = useState("");
   const [telefono, setTelefono] = useState("");
   const [attending, setAttending] = useState("");
+  const [guests, setGuests] = useState(0);
   const [ticket, setTicket] = useState<string | null>(externalTicket || null);
   const navigate = useNavigate();
 
@@ -21,13 +23,13 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket, onSubmit })
       .padStart(6, "0");
 
     if (attendingValue === "yes") {
-      setTicket(`INVITACIÓN-${ticketNumber} (${123 + 1} personas)`);
+      setTicket(`INVITACIÓN-${ticketNumber} (${guests + 1} personas)`);
     } else {
       setTicket(`DECLINACIÓN-${ticketNumber}`);
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name.trim() || !attending) {
@@ -35,12 +37,18 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket, onSubmit })
       return;
     }
 
-    if (onSubmit) {
-      onSubmit(name, attending);
-    }
+    try {
+      const data = await enviarRSVP({ name, phone: telefono, attending: attending === "yes", guests });
 
-    // Generar ticket después del envío
-    handleRSVP(attending);
+      if (data.success) {
+        handleRSVP(attending);
+      } else {
+        alert("Error al enviar tu confirmación: " + data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error al enviar tu confirmación");
+    }
   };
 
   return (
@@ -60,6 +68,7 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket, onSubmit })
           <label htmlFor="telefono">Teléfono</label>
           <input type="text" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
         </div>
+
         <div className="ask-asistir">
           <label>¿Asistirás?</label>
         </div>
@@ -98,9 +107,9 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket, onSubmit })
               comprensión!”
             </p>
             <label htmlFor="guests">Número de Acompañantes</label>
-            <select id="guests">
-              <option value="0">Solo yo</option>
-              <option value="1">1 acompañante</option>
+            <select id="guests" value={guests} onChange={(e) => setGuests(Number(e.target.value))}>
+              <option value={0}>Solo yo</option>
+              <option value={1}>1 acompañante</option>
             </select>
           </div>
         )}
@@ -115,7 +124,7 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket, onSubmit })
           <h3>¡Gracias por confirmar tu asistencia!</h3>
           <p className="ticket-number">{name}</p>
           <p>Nos alegra mucho que puedas acompañarnos en este día tan especial.</p>
-          <p>Tu presencia hará este momento aún más memorable.</p>
+          <p>Asistirán {guests + 1} personas.</p>
           <div className="ticket-message">
             <p>Con cariño,</p>
             <p className="signature">Valentina & Yeison</p>
