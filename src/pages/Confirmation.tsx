@@ -36,21 +36,17 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       alert("Por favor ingresa tu nombre y selecciona si asistirás o no.");
       return;
     }
-
     try {
       const payload: any = {
         name,
         phone: telefono,
         attending: attending === "yes",
       };
-
       // 👇 Solo mandamos guests si realmente va a asistir
       if (attending === "yes") {
         payload.guests = guests;
       }
-
       const data = await enviarRSVP(payload);
-
       if (data.success) {
         handleRSVP(attending);
       } else {
@@ -136,8 +132,8 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
               value={guests}
               onChange={(e) => setGuests(Number(e.target.value))}
             >
-              <option value={0}>Solo yo</option>
-              <option value={1}>1 acompañante</option>
+              <option value={1}>Solo yo</option>
+              <option value={2}>1 acompañante</option>
             </select>
           </div>
         )}
