@@ -39,19 +39,25 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
 
     if (value === "yes") {
       try {
+        console.log("🔍 Iniciando búsqueda de invitado:", { name, telefono });
+        
         const data = await findInvitado(name, telefono);
 
+        console.log("📋 Resultado de búsqueda:", data);
+
         if (data.success && data.invitado) {
+          console.log("✅ Invitado encontrado:", data.invitado);
           setNumeroPermitidos(data.invitado.maxGuests); // 👈 desde la BD
           setGuests(1); // arranca en "solo yo"
         } else {
-          alert("No encontramos tu invitación, revisa nombre y teléfono.");
+          console.log("❌ Invitado no encontrado:", data.message);
+          alert(`No encontramos tu invitación: ${data.message || 'Revisa nombre y teléfono.'}`);
           setNumeroPermitidos(1);
           setGuests(1);
         }
       } catch (err) {
-        console.error(err);
-        alert("Error consultando invitado");
+        console.error("💥 Error en búsqueda:", err);
+        alert(`Error consultando invitado: ${err instanceof Error ? err.message : 'Error desconocido'}`);
         setNumeroPermitidos(1);
         setGuests(1);
       }
@@ -98,6 +104,7 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       </button>
 
       <h2>Confirmación de Asistencia</h2>
+      
       <form className="rsvp-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Nombre Completo</label>
@@ -106,19 +113,26 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="Ej: María José González"
             required
           />
+          <small className="form-help">
+          </small>
         </div>
 
         <div className="form-group">
           <label htmlFor="telefono">Teléfono</label>
           <input
-            type="text"
+            type="tel"
             id="telefono"
             value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
+            placeholder="Ej: 3001234567"
             required
           />
+          <small className="form-help">
+            Ingresa solo los números del teléfono, sin espacios ni guiones
+          </small>
         </div>
 
         <div className="ask-asistir">
