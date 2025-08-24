@@ -38,7 +38,18 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
     }
 
     try {
-      const data = await enviarRSVP({ name, phone: telefono, attending: attending === "yes", guests });
+      const payload: any = {
+        name,
+        phone: telefono,
+        attending: attending === "yes",
+      };
+
+      // 👇 Solo mandamos guests si realmente va a asistir
+      if (attending === "yes") {
+        payload.guests = guests;
+      }
+
+      const data = await enviarRSVP(payload);
 
       if (data.success) {
         handleRSVP(attending);
@@ -61,12 +72,24 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       <form className="rsvp-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Nombre Completo</label>
-          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </div>
 
         <div className="form-group">
           <label htmlFor="telefono">Teléfono</label>
-          <input type="text" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
+          <input
+            type="text"
+            id="telefono"
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
+            required
+          />
         </div>
 
         <div className="ask-asistir">
@@ -102,12 +125,17 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
         {attending === "yes" && (
           <div className="form-group">
             <p className="msn">
-              “Queremos que este día sea especial para todos. Por favor, no llevar niños (es un espacio para que
-              disfruten los adultos), llegar puntuales y seguir el código de vestimenta indicado. ¡Gracias por su
-              comprensión!”
+              “Queremos que este día sea especial para todos. Por favor, no
+              llevar niños (es un espacio para que disfruten los adultos),
+              llegar puntuales y seguir el código de vestimenta indicado.
+              ¡Gracias por su comprensión!”
             </p>
             <label htmlFor="guests">Número de Acompañantes</label>
-            <select id="guests" value={guests} onChange={(e) => setGuests(Number(e.target.value))}>
+            <select
+              id="guests"
+              value={guests}
+              onChange={(e) => setGuests(Number(e.target.value))}
+            >
               <option value={0}>Solo yo</option>
               <option value={1}>1 acompañante</option>
             </select>
@@ -123,7 +151,9 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
         <div className="ticket">
           <h3>¡Gracias por confirmar tu asistencia!</h3>
           <p className="ticket-number">{name}</p>
-          <p>Nos alegra mucho que puedas acompañarnos en este día tan especial.</p>
+          <p>
+            Nos alegra mucho que puedas acompañarnos en este día tan especial.
+          </p>
           <p>Asistirán {guests + 1} personas.</p>
           <div className="ticket-message">
             <p>Con cariño,</p>
@@ -135,7 +165,10 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       {ticket && attending === "no" && (
         <div className="ticket decline-ticket">
           <h3>Gracias por tu respuesta</h3>
-          <p>Lamentamos mucho que no puedas acompañarnos en este día tan especial.</p>
+          <p>
+            Lamentamos mucho que no puedas acompañarnos en este día tan
+            especial.
+          </p>
           <p>Tu presencia siempre estará en nuestros corazones.</p>
           <div className="ticket-message">
             <p>Con cariño,</p>
