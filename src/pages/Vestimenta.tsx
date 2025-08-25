@@ -21,7 +21,7 @@ const dressEvents: DressEvent[] = [
   {
     title: "Damas",
     description:
-      "Vestidos o conjuntos largos/midi. Tonos oscuros o con brillo para la noche. Evitar jean, ropa desgastada y colores claros.",
+      "Vestidos o conjuntos largos/midi. Evitar color blanco, beige, verde o muy claros. Pueden ser colores oscuros o con brillantes ya que el evento es de noche. Evitar jean y ropa desgastada.",
     image: dress_women,
   },
   {
