@@ -8,7 +8,7 @@ import "../App.css"
 export default function InvitationPage() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   const navigate = useNavigate()
-  const weddingDate = new Date("2025-10-11T19:00:00")
+  const weddingDate = new Date("2025-10-11T18:30:00")
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -65,7 +65,7 @@ export default function InvitationPage() {
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="location-details">
             <p>Casa del río, Santander de Quilichao</p>
-            <span>07:00 pm</span>
+            <span>06:30 pm</span>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.8 }} className="countdown">

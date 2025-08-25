@@ -1,6 +1,6 @@
 import type React from "react"
 import { useNavigate } from "react-router-dom"
-import fotoUbi from "../assets/portada_dic.jpg"
+import fotoUbi from "../assets/portada_place.jpg"
 import CustomIconButton from "../components/CustomIconButton"
 import { FaMapMarkerAlt, FaArrowLeft, FaWhatsapp, FaPhone, FaMobileAlt } from "react-icons/fa";
 

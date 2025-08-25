@@ -1,7 +1,8 @@
 // Configuración simple del frontend
 export const CONFIG = {
   // URLs de la API
-  API_BASE_URL: "https://inv-boda-backend.onrender.com",
+  //API_BASE_URL: "https://inv-boda-backend.onrender.com",
+  API_BASE_URL: "https://localhost:5000",
   
   // Información de la aplicación
   APP_NAME: "Invitación de Boda",
