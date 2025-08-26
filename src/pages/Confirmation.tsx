@@ -107,7 +107,7 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       
       <form className="rsvp-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Nombre Completo</label>
+          <label htmlFor="name">Nombre</label>
           <input
             type="text"
             id="name"
