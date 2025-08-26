@@ -13,7 +13,7 @@ const itineraryEvents: ItineraryEvent[] = [
   { time: "10:30 PM", event: "Cena", type: "dinner" },
   { time: "11:00 PM", event: "Apertura de pista", type: "dance" },
   { time: "11:30 PM", event: "Plataforma 360", type: "platform" },
-  { time: "12:00 PM", event: "Lanzamiento de ramo", type: "bouquet" },
+  { time: "12:00 AM", event: "Lanzamiento de ramo", type: "bouquet" },
 ]
 
 const ItinerarioPage: React.FC = () => {
