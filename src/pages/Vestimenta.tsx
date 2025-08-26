@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import before from "../assets/before.png";
 import next from "../assets/next.png";
-import dress_women from "../assets/dress_women.jpg";
+import dress_women from "../assets/dress-women.jpg";
 import dress_men from "../assets/dress_men.jpg";
 import { FaArrowLeft } from "react-icons/fa";
 
