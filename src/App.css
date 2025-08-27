@@ -22,7 +22,7 @@ body {
 
 /* sobre*/
 .body-sobre {
-  background-color: #172622;
+  background-color: #c7dccf;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,7 +203,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #172622;
+  background-color: #c7dccf;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -220,8 +220,8 @@ body {
   height: 200px;
   margin: 0 auto;
   border-radius: 50%;
-  border: 4px solid #a68a72;
-  background-color: #a68a72;
+  border: 4px solid #52655A;
+  background-color: #52655A;
   overflow: hidden; /* Recorta lo que salga del círculo */
   display: flex; /* Centra la imagen */
   align-items: center;
@@ -237,25 +237,25 @@ body {
 .invitation-title {
   font-size: 3rem;
   font-family: serif;
-  color: #a68a72;
+  color: #52655A;
   line-height: 1.2;
   padding: 20px;
 }
 
 .invitation-date {
   display: inline-block;
-  background-color: #C5D0DA;
+  background-color: #e4e7e4;
   padding: 0.75rem 2rem;
   border-radius: 9999px;
   font-weight: 500;
-  color: #172622;
+  color: #67937a;
   font-size: 1rem;
   border: 20px;
 }
 
 .invitation-message {
   font-size: 1.125rem;
-  color: #a68a72;
+  color: #52655A;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -263,14 +263,14 @@ body {
 }
 
 .location-details p {
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.125rem;
 }
 
 .location-details span {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #a68a72; 
+  color: #52655A; 
 }
 
 .countdown {
@@ -280,7 +280,7 @@ body {
 .countdown-title {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #a68a72;
+  color: #52655A;
   margin-bottom: 1rem;
 }
 
@@ -299,12 +299,12 @@ body {
 .countdown-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #C5D0DA;
+  color: #405b4c;
 }
 
 .countdown-label {
   font-size: 0.75rem;
-  color: #6b7280;
+  color: #405b4c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -316,7 +316,7 @@ body {
 .more-info-title {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #a68a72;
+  color: #405b4c;
   margin-bottom: 1rem;
 }
 
@@ -331,25 +331,25 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  border: 1px solid #a68a72;
+  border: 1px solid #405b4c;
   border-radius: 0.5rem;
   background-color: transparent;
   transition: background-color 0.3s;
-  color: #C5D0DA;
+  color: rgb(127, 152, 127);
 }
 
 .info-button:hover {
-  background-color: #a68a72;
+  background-color: #405b4c;
 }
 
 .confirm-button {
-  background-color: #a68a72;
-  color: #172622;
+  background-color: #405b4c;
+  color: #e4e7e4;
   border: none;
 }
 
 .confirm-button:hover {
-  background-color: #cdb39b;
+  background-color: #47574f;
 }
 
 /*  Responsive Styles */
@@ -429,12 +429,12 @@ body {
 /* Estilos para la galería */
 .our-story {
   min-height: 100vh;
-  background-color: #172622;
+  background-color: #c7dccf;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #a68a72;
+  color: #52655A;
   position: relative;
 }
 
@@ -450,7 +450,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.2rem;
   border: transparent;
 }
@@ -465,8 +465,8 @@ body {
   font-size: 3rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #a68a72;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #52655A;
+  text-shadow: 2px 2px 4px #52655A;
   font-family: "Georgia", serif;
   position: relative;
   display: inline-block;
@@ -480,7 +480,7 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #a68a72;
+  background-color: #52655A;
 }
 
 .timeline-wrapper {
@@ -506,7 +506,7 @@ body {
 }
 
 .timeline-button:hover {
-  background-color: #a68a72;
+  background-color: #52655A;
   transform: scale(1.1);
 }
 
@@ -529,7 +529,7 @@ body {
   max-height: 400px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px #52655A;
   transition: all 0.5s ease;
 }
 
@@ -545,13 +545,13 @@ body {
   text-align: center;
   max-width: 600px;
   width: 100%;
-  border: 1px solid #a68a72;
+  border: 1px solid #52655A;
 }
 
 .song-message {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #a68a72;
+  color: #52655A;
   font-family: "Georgia", serif;
 }
 
@@ -573,13 +573,13 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: white;
+  color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
 
 .control-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #799484;
   transform: scale(1.1);
 }
 
@@ -593,14 +593,14 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
 }
 
 .play-button:hover {
-  background: #8b6f5d;
+  background: #799484;
   transform: scale(1.1);
 }
 
@@ -652,7 +652,7 @@ body {
 .location-section {
   min-height: 100vh;
   width: 100%;
-  background-color: #172622;
+  background-color: #c7dccf;
   position: relative;
   padding: 40px 20px;
   text-align: center;
@@ -671,7 +671,7 @@ ul {
   text-align: left;
   width: 300px;
   margin:auto;
-  border: 2px solid #a68a72;
+  border: 2px solid #52655A;
   border-radius: 10px;
   padding: 10px;
 }
@@ -700,7 +700,7 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -716,9 +716,11 @@ ul {
 .location-section h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #a68a72;
+  color: #52655A;
   position: relative;
   display: inline-block;
+  text-shadow: 2px 2px 4px #52655A;
+  font-family: "Georgia", serif;
 }
 
 .location-section h2::after {
@@ -729,19 +731,19 @@ ul {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #a68a72;
+  background-color: #52655A;
 }
 
 .location-name {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #a68a72;
+  color: #52655A;
 }
 
 .location-address {
   padding: 5px;
   margin-bottom: 30px;
-  color: #a68a72;
+  color: #52655A;
 }
 
 .location-map {
@@ -794,7 +796,7 @@ ul {
 
 /* codigo de vestimenta */
 .dress-code {
-  background: #172622;
+  background: #c7dccf;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -813,7 +815,7 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -821,13 +823,13 @@ ul {
 }
 
 .dress-code h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #a68a72;
+  color: #52655A;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-family: "Georgia", serif;
-  padding: 42px;
+  padding: 15px;
   position: relative;
   display: inline-block;
 }
@@ -840,7 +842,7 @@ ul {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #a68a72;
+  background-color: #52655A;
 }
 
 .dress-code .timeline-wrapper {
@@ -904,20 +906,20 @@ ul {
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 10px;
-  border: 1px solid #a68a72;
+  border: 1px solid #52655A;
   max-width: 400px;
   width: 100%;
 }
 
 .dress-code .message:first-of-type {
   font-size: 1.5rem;
-  color: #a68a72;
+  color: #52655A;
   margin-bottom: 1rem;
 }
 
 .dress-code .message:last-of-type {
   font-size: 1.1rem;
-  color: #a68a72;
+  color: #52655A;
 }
 
 /* Responsive design para vestimenta */
@@ -966,7 +968,7 @@ ul {
 .itinerary {
   min-height: 100vh;
   width: 100%;
-  background-color: #172622;
+  background-color: #c7dccf;
   position: relative;
   padding: 40px 20px;
   text-align: center;
@@ -985,7 +987,7 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -1009,9 +1011,12 @@ ul {
 .itinerary h2 {
   font-size: 2rem;
   margin-bottom: 50px;
-  color: #a68a72;
+  color: #52655A;
   position: relative;
   display: inline-block;
+  text-shadow: 2px 2px 4px #52655A;
+  font-family: "Georgia", serif;
+  
 }
 
 .itinerary h2::after {
@@ -1022,13 +1027,13 @@ ul {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #a68a72;
+  background-color: #52655A
 }
 
 .itinerary-list {
   max-width: 80%;
   margin: 0 auto;
-  background-color: #a68a72;
+  background-color: white;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 15px #172622;
@@ -1131,7 +1136,7 @@ ul {
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #a68a72;
+  background-color: #52655A;
   color: #172622;
   border: none;
   border-radius: 30px;
@@ -1154,7 +1159,7 @@ ul {
 .gift-registry {
   min-height: 100vh;
   width: 100%;
-  background-color: #172622;
+  background-color: #c7dccf;
   position: relative;
   padding: 40px;
   text-align: center;
@@ -1186,7 +1191,7 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -1202,9 +1207,11 @@ ul {
 .gift-registry h2 {
   font-size: 2rem;
   margin-bottom: 50px;
-  color: #a68a72;
+  color: #52655A;
   position: relative;
   display: inline-block;
+  text-shadow: 2px 2px 4px #52655A;
+  font-family: "Georgia", serif;
 }
 
 .gift-registry h2::after {
@@ -1215,13 +1222,13 @@ ul {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #a68a72;
+  background-color: #52655A;
 }
 
 .gift-registry p {
   max-width: 600px;
   margin: 0 auto 30px;
-  color: #a68a72;
+  color: #52655A;
   padding: 20px;
 }
 
@@ -1238,7 +1245,7 @@ ul {
   align-items: center;
   gap: 10px;
   padding: 12px 25px;
-  background-color: #a68a72;
+  background-color: white;
   color: #172622;
   text-decoration: none;
   border-radius: 30px;
@@ -1261,7 +1268,7 @@ ul {
 .rsvp {
   min-height: 100vh;
   width: 100%;
-  background-color: #172622;
+  background-color: #c7dccf;
   position: relative;
   padding: 40px 20px;
   text-align: center;
@@ -1295,7 +1302,7 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #a68a72;
+  color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -1322,9 +1329,11 @@ ul {
 .rsvp h2 {
   font-size: 2rem;
   margin-bottom: 50px;
-  color: #a68a72;
+  color: #52655A;
   position: relative;
   display: inline-block;
+  text-shadow: 2px 2px 4px #52655A;
+  font-family: "Georgia", serif;
 }
 
 .rsvp h2::after {
@@ -1335,7 +1344,7 @@ ul {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #a68a72;
+  background-color: #52655A;
 }
 
 .msn {
@@ -1362,7 +1371,7 @@ ul {
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  color: #a68a72;
+  color: #52655A;
   font-weight: 600;
 }
 
@@ -1370,7 +1379,7 @@ ul {
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #a68a72;
+  border: 1px solid #52655A;
   border-radius: 5px;
   font-size: 1rem;
   line-height: 1.5;
@@ -1390,17 +1399,17 @@ ul {
   justify-content: center;
   align-items: center;
   margin: 30px;
-  color: #a68a72;
+  color: #52655A
 }
 
 .ask-asistir {
   text-align: center;
-  color: #a68a72;
+  color: #52655A;
 }
 
 
 .submit-btn {
-  background-color: #a68a72;
+  background-color: #52655A;
   color: #172622;
   border: none;
   padding: 12px 30px;
@@ -1419,38 +1428,38 @@ ul {
 .ticket {
   margin-top: 30px;
   padding: 20px;
-  border: 2px dashed #a68a72;
+  border: 2px dashed #52655A;
   border-radius: 10px;
   text-align: center;
 }
 
 .ticket h3, p {
   margin-bottom: 10px;
-  color: #a68a72;
+  color: #52655A;
 }
 
 .ticket-number {
   font-size: 1.5rem;
   font-weight: 700;
-  color:#a68a72;
+  color:#52655A;
   padding: 10px;
 }
 
 .decline-ticket {
   border-style: solid;
-  border-color: #a68a72;
+  border-color: #52655A
 }
 
 .decline-ticket p {
   margin: 10px 0;
-  color: #a68a72;
+  color: #52655A;
   line-height: 1.6;
 }
 
 .ticket-message {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #a68a72;
+  border-top: 1px solid #52655A;
 }
 
 .signature {
@@ -1475,9 +1484,9 @@ ul {
 
 /* aporte transferencia */
 .gift-card {
-  background-color: #172622; 
-  border-radius: 1rem ;
-  border: 3px solid #a68a72;
+  background-color: #c7dccf;
+  border-radius: 1rem;
+  border: 2px solid #52655A;
   padding: 1.5rem;
 }
 
@@ -1491,13 +1500,13 @@ ul {
 .gift-header h3 {
   font-size: 1.25rem;
   font-family: serif;
-  color: #a68a72;
+  color: #52655A
 }
 
 .icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: #C5D0DA;
+  color: rgb(127, 152, 127);
 }
 
 .gift-text {
@@ -1513,14 +1522,14 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 2px dashed #a68a72;
+  border: 2px dashed #52655A;
   margin: 10px;
 }
 
 
 .account-info .mono {
   font-family: monospace;
-  color: #a68a72;
+  color: #52655A;
   padding: 0;
   text-align: left;
   align-self: flex-start;
