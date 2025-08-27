@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ body {
 
 /* sobre*/
 .body-sobre {
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@ body {
 }
 
 .sobre-title {
-  color: #a68a72;
+  color: #52655A;
   font-family: "Georgia", serif;
   font-size: 50px;
   text-align: center;
@@ -104,17 +104,19 @@ body {
 }
 
 .content-text h2 {
-  font-size: 1.8rem;
+  font-family: 'georgia', serif;
+  font-size: 1.4rem;
+  font-style: oblique;
   font-weight: 600;
-  color: #2c3e50;
+  color: #52655A;
   margin: 0 0 15px 0;
   letter-spacing: 1px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px #52655A;
 }
 
 .content-text p {
-  font-size: 1.1rem;
-  color: #5a6c7d;
+  font-size: 1.2rem;
+  color: #52655A;
   margin: 0;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -122,8 +124,8 @@ body {
 
 .paper p {
   font-family: "Georgia", serif;
-  font-size: 16px;
-  color: #172622;
+  font-size: 18px;
+  color: #52655A;
 }
 
 .sello {
@@ -203,7 +205,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -226,6 +228,7 @@ body {
   display: flex; /* Centra la imagen */
   align-items: center;
   justify-content: center;
+  box-shadow: 1.5px 1.5px 3px #52655A;
 }
 
 .perfil-img {
@@ -236,10 +239,12 @@ body {
 
 .invitation-title {
   font-size: 3rem;
-  font-family: serif;
   color: #52655A;
   line-height: 1.2;
-  padding: 20px;
+  padding: 10px;
+  text-shadow: 1.5px 1.5px 3px #52655A;
+  font-family: "akaya", serif;
+  font-style: oblique;
 }
 
 .invitation-date {
@@ -251,10 +256,13 @@ body {
   color: #67937a;
   font-size: 1rem;
   border: 20px;
+  box-shadow: 1.5px 3px 1.5px #52655A;
+  font-weight: bold;
 }
 
 .invitation-message {
-  font-size: 1.125rem;
+  font-size: 1.150rem;
+  font-style: oblique;
   color: #52655A;
   max-width: 600px;
   margin: 0 auto;
@@ -264,7 +272,9 @@ body {
 
 .location-details p {
   color: #52655A;
-  font-size: 1.125rem;
+  font-size: 1.150rem;
+  font-style: inherit;
+  font-weight: bold;
 }
 
 .location-details span {
@@ -282,6 +292,7 @@ body {
   font-weight: 500;
   color: #52655A;
   margin-bottom: 1rem;
+  text-shadow: 1.5px 1.5px 3px #52655A;
 }
 
 .countdown-grid {
@@ -300,6 +311,7 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   color: #405b4c;
+  text-shadow: 1.5px 1.5px 3px #52655A;
 }
 
 .countdown-label {
@@ -307,6 +319,8 @@ body {
   color: #405b4c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-shadow: 1.5px 1.5px 3px #52655A;
+
 }
 
 .more-info {
@@ -336,6 +350,9 @@ body {
   background-color: transparent;
   transition: background-color 0.3s;
   color: rgb(127, 152, 127);
+  box-shadow: 1.5px 1.5px 3px #52655A;
+  cursor: pointer;
+  text-shadow: 0.5px 0.5px 1px #52655A;
 }
 
 .info-button:hover {
@@ -349,7 +366,7 @@ body {
 }
 
 .confirm-button:hover {
-  background-color: #47574f;
+  background-color: #516e5e;
 }
 
 /*  Responsive Styles */
@@ -395,7 +412,7 @@ body {
 
 @media (max-width: 480px) {
   .invitation-container {
-    padding: 20px;
+    padding: 25px;
   }
 
   .decorative-circle {
@@ -404,7 +421,7 @@ body {
   }
 
   .invitation-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .invitation-message {
@@ -429,7 +446,7 @@ body {
 /* Estilos para la galería */
 .our-story {
   min-height: 100vh;
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -545,7 +562,8 @@ body {
   text-align: center;
   max-width: 600px;
   width: 100%;
-  border: 1px solid #52655A;
+  border: 2px solid #52655A;
+  box-shadow: 0 4px 15px #52655A;
 }
 
 .song-message {
@@ -553,6 +571,7 @@ body {
   margin-bottom: 1.5rem;
   color: #52655A;
   font-family: "Georgia", serif;
+  font-weight: bold;
 }
 
 .music-player {
@@ -576,6 +595,7 @@ body {
   color: #52655A;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 10px #52655A;
 }
 
 .control-button:hover {
@@ -594,9 +614,9 @@ body {
   justify-content: center;
   cursor: pointer;
   color: #52655A;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  box-shadow: 0 2px 10px #52655A;
 }
 
 .play-button:hover {
@@ -652,7 +672,7 @@ body {
 .location-section {
   min-height: 100vh;
   width: 100%;
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   position: relative;
   padding: 40px 20px;
   text-align: center;
@@ -674,6 +694,7 @@ ul {
   border: 2px solid #52655A;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 0 2px 10px #52655A;
 }
 /* Responsive para pantallas grandes */
 @media (min-width: 768px) {
@@ -738,6 +759,8 @@ ul {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #52655A;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px 3px #52655A;
 }
 
 .location-address {
@@ -796,7 +819,7 @@ ul {
 
 /* codigo de vestimenta */
 .dress-code {
-  background: #c7dccf;
+  background: #c8cfbf;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -903,12 +926,13 @@ ul {
 }
 
 .dress-code .message {
-  backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 10px;
-  border: 1px solid #52655A;
-  max-width: 400px;
-  width: 100%;
+  border: 1.5px solid #52655A;
+  max-width: 100%;
+  max-height: 400px;
+  box-shadow: 0 4px 15px #52655A;
+  box-sizing: border-box;
+
 }
 
 .dress-code .message:first-of-type {
@@ -937,12 +961,16 @@ ul {
 
   .dress-code .timeline-wrapper {
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .dress-code .timeline-button {
     width: 50px;
     height: 50px;
+  }
+
+  .event-text {
+    padding: 1rem;
   }
 
   .dress-code .arrow-icon {
@@ -958,8 +986,16 @@ ul {
     max-height: 400px;
   }
 
+  .event-text {
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
   .dress-code .message {
     padding: 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 }
 
@@ -968,7 +1004,7 @@ ul {
 .itinerary {
   min-height: 100vh;
   width: 100%;
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   position: relative;
   padding: 40px 20px;
   text-align: center;
@@ -1036,7 +1072,7 @@ ul {
   background-color: white;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 15px #172622;
+  box-shadow: 0 4px 15px #52655A;
 }
 
 .itinerary-item {
@@ -1072,7 +1108,7 @@ ul {
 }
 
 .itinerary-event {
-  color: #172622;
+  color: #52655A;
   text-align: left;
 }
 
@@ -1106,6 +1142,7 @@ ul {
   .event-icon {
     font-size: 1.2rem;
     min-width: 24px;
+    color: #52655A;
   }
 
   .itinerary-event {
@@ -1117,7 +1154,7 @@ ul {
     font-size: 0.95rem;
     min-width: unset;
     text-align: left;
-    color: #172622;
+    color: #52655A;
     font-weight: 500;
     margin-left: 34px; /* para alinear con el texto del evento */
   }
@@ -1159,7 +1196,7 @@ ul {
 .gift-registry {
   min-height: 100vh;
   width: 100%;
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   position: relative;
   padding: 40px;
   text-align: center;
@@ -1251,7 +1288,7 @@ ul {
   border-radius: 30px;
   transition: all 0.3s ease;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px #52655A;
 }
 
 .registry-link:hover {
@@ -1268,7 +1305,7 @@ ul {
 .rsvp {
   min-height: 100vh;
   width: 100%;
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   position: relative;
   padding: 40px 20px;
   text-align: center;
@@ -1419,6 +1456,7 @@ ul {
   transition: background-color 0.3s;
   display: block;
   margin: 0 auto;
+  box-shadow: 0 2px 10px #52655A;
 }
 
 .submit-btn:hover {
@@ -1484,10 +1522,11 @@ ul {
 
 /* aporte transferencia */
 .gift-card {
-  background-color: #c7dccf;
+  background-color: #c8cfbf;
   border-radius: 1rem;
   border: 2px solid #52655A;
   padding: 1.5rem;
+  box-shadow: 0 4px 15px #52655A;
 }
 
 .gift-header {
@@ -1507,6 +1546,7 @@ ul {
   width: 1.5rem;
   height: 1.5rem;
   color: rgb(127, 152, 127);
+  filter: drop-shadow(0.2px 0.2px 0.6px #52655A);
 }
 
 .gift-text {

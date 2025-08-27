@@ -107,8 +107,10 @@ const DressCode: React.FC<DressCodeProps> = ({ events = dressEvents }) => {
               transition: "transform 0.5s ease",
             }}
           />
-          <h3 className="message">{events[currentIndex].title}</h3>
-          <p className="message">{events[currentIndex].description}</p>
+          <div className="event-text">
+            <h3 className="message">{events[currentIndex].title}</h3>
+            <p className="message">{events[currentIndex].description}</p>
+          </div>
         </div>
         <button onClick={goToNext} className="timeline-button">
           <img src={next} alt="Siguiente" className="arrow-icon" />
