@@ -369,6 +369,13 @@ body {
   background-color: #516e5e;
 }
 
+.form-search {
+  font-size: 0.875rem;
+  color: #52655A;
+  text-align: center;
+  padding: 0px 10px 20px 10px;
+}
+
 /*  Responsive Styles */
 @media (max-width: 768px) {
   .invitation-container {
@@ -1184,6 +1191,7 @@ ul {
 
 .custom-icon-button:hover {
   background-color: #b9c9c0;
+  border-radius: 30px;
 }
 
 .icon {
@@ -1239,6 +1247,7 @@ ul {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
   transform: scale(1.1);
+  border-radius: 30px;
 }
 
 .gift-registry h2 {
@@ -1295,6 +1304,7 @@ ul {
   background-color: #e8f0eb;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
 }
 
 .registry-icon {
@@ -1461,6 +1471,7 @@ ul {
 
 .submit-btn:hover {
   background-color: #e8f0eb;
+  border-radius: 30px;
 }
 
 .ticket {

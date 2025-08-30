@@ -5,6 +5,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { enviarRSVP } from "../services/rsvp";
 import { findInvitado } from "../services/invitados";
 
+
 interface RSVPProps {
   onSubmit?: (name: string, attending: string, guests?: number) => void;
   ticket?: string | null;
@@ -17,6 +18,7 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
   const [guests, setGuests] = useState(0);
   const [ticket, setTicket] = useState<string | null>(externalTicket || null);
 
+  const [loading, setLoading] = useState(false);
   // ✅ Ahora sí, dentro del componente
   const [numeroPermitidos, setNumeroPermitidos] = useState<number | null>(null);
 
@@ -35,37 +37,41 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
   };
 
   const handleAttendingChange = async (value: string) => {
-    setAttending(value);
+  setAttending(value);
 
-    if (value === "yes") {
-      try {
-        console.log("🔍 Iniciando búsqueda de invitado:", { name, telefono });
-        
-        const data = await findInvitado(name, telefono);
+  if (value === "yes") {
+    setLoading(true); // 👈 empieza la búsqueda
+    try {
+      console.log("🔍 Iniciando búsqueda de invitado:", { name, telefono });
+      
+      const data = await findInvitado(name, telefono);
 
-        console.log("📋 Resultado de búsqueda:", data);
+      console.log("📋 Resultado de búsqueda:", data);
 
-        if (data.success && data.invitado) {
-          console.log("✅ Invitado encontrado:", data.invitado);
-          setNumeroPermitidos(data.invitado.maxGuests); // 👈 desde la BD
-          setGuests(1); // arranca en "solo yo"
-        } else {
-          console.log("❌ Invitado no encontrado:", data.message);
-          alert(`No encontramos tu invitación: ${data.message || 'Revisa nombre y teléfono.'}`);
-          setNumeroPermitidos(1);
-          setGuests(1);
-        }
-      } catch (err) {
-        console.error("💥 Error en búsqueda:", err);
-        alert(`Error consultando invitado: ${err instanceof Error ? err.message : 'Error desconocido'}`);
+      if (data.success && data.invitado) {
+        console.log("✅ Invitado encontrado:", data.invitado);
+        setNumeroPermitidos(data.invitado.maxGuests);
+        setGuests(1);
+      } else {
+        console.log("❌ Invitado no encontrado:", data.message);
+        alert(`No encontramos tu invitación: ${data.message || 'Revisa nombre y teléfono.'}`);
         setNumeroPermitidos(1);
         setGuests(1);
       }
-    } else {
-      setNumeroPermitidos(null); // si dice que no va, ocultamos el select
-      setGuests(0);
+    } catch (err) {
+      console.error("💥 Error en búsqueda:", err);
+      alert(`Error consultando invitado: ${err instanceof Error ? err.message : 'Error desconocido'}`);
+      setNumeroPermitidos(1);
+      setGuests(1);
+    } finally {
+      setLoading(false); // 👈 termina la búsqueda
     }
-  };
+  } else {
+    setNumeroPermitidos(null);
+    setGuests(0);
+    setLoading(false); // asegurarse de limpiar si cambia a "no"
+  }
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,8 +122,6 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
             placeholder="Ej: María José González"
             required
           />
-          <small className="form-help">
-          </small>
         </div>
 
         <div className="form-group">
@@ -164,6 +168,10 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
             </div>
           </div>
         </div>
+
+        {loading && (
+          <small className="form-search">🔍Buscando su invitación, espere un momento...</small>
+        )}
 
         {attending === "yes" && numeroPermitidos !== null && (
           <div className="form-group">
