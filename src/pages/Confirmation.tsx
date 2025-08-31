@@ -35,11 +35,16 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       setTicket(`DECLINACIÓN-${ticketNumber}`);
     }
   };
-
+//Validacion de asistencia
   const handleAttendingChange = async (value: string) => {
   setAttending(value);
 
   if (value === "yes") {
+    if (!name.trim() || !telefono.trim()) {
+      alert("Por favor ingresa tu nombre y teléfono antes de continuar");
+      setAttending(""); // resetea la selección
+      return;
+    }
     setLoading(true); // 👈 empieza la búsqueda
     try {
       console.log("🔍 Iniciando búsqueda de invitado:", { name, telefono });
@@ -54,15 +59,15 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
         setGuests(1);
       } else {
         console.log("❌ Invitado no encontrado:", data.message);
-        alert(`No encontramos tu invitación: ${data.message || 'Revisa nombre y teléfono.'}`);
-        setNumeroPermitidos(1);
-        setGuests(1);
+        alert(`No encontramos tu invitación: Revisa nombre y teléfono.`);
+        setNumeroPermitidos(null);
+        setGuests(0);
       }
     } catch (err) {
       console.error("💥 Error en búsqueda:", err);
-      alert(`Error consultando invitado: ${err instanceof Error ? err.message : 'Error desconocido'}`);
-      setNumeroPermitidos(1);
-      setGuests(1);
+      alert(`Tuvimos un problema al buscar tu invitación. Intenta de nuevo en unos minutos`);
+      setNumeroPermitidos(null);
+      setGuests(0);
     } finally {
       setLoading(false); // 👈 termina la búsqueda
     }
