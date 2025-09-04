@@ -7,9 +7,35 @@
   font-family: "Playfair Display", serif;
 }
 
-
 body {
   overflow-x: hidden;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #c8cfbf; /* tono suave */
+  color: #444;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer .names {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #52655A; /* tono elegante tipo dorado/marrón */
+}
+
+.footer .thanks {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.footer small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #888;
 }
 
 /* home */

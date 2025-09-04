@@ -35,7 +35,8 @@ const Confirmation: React.FC<RSVPProps> = ({ ticket: externalTicket }) => {
       setTicket(`DECLINACIÓN-${ticketNumber}`);
     }
   };
-//Validacion de asistencia
+
+  //Validacion de asistencia
   const handleAttendingChange = async (value: string) => {
   setAttending(value);
 
